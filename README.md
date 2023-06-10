@@ -23,3 +23,8 @@ HTML and CSS are so much fun!
 저장만 하면 딱히 무슨 변화가 있지는 않음.
 따라서 저장한 commit을 Publish -> 즉, publish branch클릭해주기
 -->
+<!--
+commit 저장하고 나면 좌측 하단에 commited just now라고 되어있는데,
+이건 내 컴퓨터에서 git이 업데이트된걸 아는거지만, github에서는 아직 모르므로
+github에서 push를 해줘야함 (github desktop에서 우측 상단에 push 버튼 있음)
+ -->
