@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- 이게 바로 css를 별도로 만들고 html파일에 import하는 방법! -->
+    <!-- link:css 하면 자동완성되고, css파일 안에 있으므로 경로 css/ 써주면 안에 파일도 자동완성으로 밑에 나타남 -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -52,14 +55,10 @@
           <span>11%</span>
           <!-- Battery icon -->
           <!-- Lightening icon -->
-          <i
-            class="fa-duotone fa-battery-low"
-            style="
-              --fa-primary-color: #ff0000;
-              --fa-secondary-color: #000000;
-              --fa-secondary-opacity: 1;
-            "
-          ></i>
+          <i class="fa-solid fa-battery-quarter fa-lg"></i>
+          <!-- font awesome에는 아이콘 사이즈 옵션확인 가능
+          2x사이즈가 있어서 변경 원하면, 해당 아이콘 class에다가 추가로 fa-2x /fa-lg등
+          단,해당 아이콘의 옵션에 있는 사이즈만 가능  -->
           <i class="fa-sharp fa-solid fa-bolt" style="color: #000000"></i>
         </div>
       </div>
@@ -72,7 +71,8 @@
       <!-- hn태그는 무조건 h1부터 써줘야함 -->
       <!-- alt키 누르고 클릭하면 코드 동시에 작성 가능 -->
       <p class="login-header__text">
-        If you have a Kakao Account, log in with your email or phone number.
+        If you have a Kakao Account, <br />log in with your email or phone
+        number.<br />
       </p>
     </header>
 
