@@ -1,0 +1,51 @@
+.status-bar {
+  display: flex;
+  /* justify-content: space-between; */
+  /* justify-content를 했지만,세 개의 block이 균일하게 떨어져 있지 않음.
+    시계가 가운데 오지 않음 -> 아이콘들+텍스트의 크기가 제각각이기 때문 (different width). 
+    따라서 justify-content말고 말 그대로 중심에 놓는 css hack(기술)을 사용*/
+  justify-content: center;
+  /* 니꼬쌤이 알려주는 css hack은 레시피 같은 것으로, 좀 이상할 수는 있어도 어디서든 사용가능
+     조금 이상해보여도 어떤 이유인지 작동이됌! 그래서 css hack이라고 부름 */
+  /* 
+    <CSS hack>
+    1) 우선 설정하고자 하는 div에 justify-content:center; 
+       -> .status-bar div의 모든 block들이 가운데로 모임
+    2) 그리고 .status-bar__column div덩어리들에 width를 33%로 주기
+    3) 이후 .status-bar__column 클래스들 No service묶음을 왼쪽으로 맞추기 위해
+       .status-bar__column:nth-child(2)에서 안의 내용물을 display:flex로 주고, 
+       justufy-content:center로 중앙값 맞추기 -> width는 33%이므로 왼쪽으로 가지만, 안의 내용물은 center유지
+    3) 마지막으로 No Service + wifi아이콘 과 배터리묶음을 양옆으로 보내기 위해, 
+       1. status-bar__column:last-child에다가는 display: flex해서 안의 내용물들 모두 flex값 주고
+       그 다음에 위치를 justyfy-content:flex-end;로 가장 끝으로 보내기
+       그렇지만 아이콘들이 살짝 위로 뜨므로 align-items 역시 center 설정
+    */
+  padding: 5px 3px;
+  font-size: 14px;
+}
+.status-bar__column {
+  width: 33%;
+}
+.status-bar__column:first-child span {
+  margin-right: 5px;
+  /* 
+      No Service와 wifi아이콘 사이에 간격을 만들어줘야 하는데, 
+      No Service의 span과 wifi 아이콘 모두 status-bar__column안에 들어가 있고, status-bar__column은 여러개임.
+      따라서 제일 앞의 status-bar__column을 지정헤주면서 그 안의 span을 선택하려면, 
+      pseudo selsctor중 하나인 irst-child을 쓰고, 바로 옆에 span 쓰며 자식 span 지정
+    */
+}
+.status-bar__column:nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+.status-bar__column:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.status-bar__column .fa-battery-quarter {
+  margin: 0px 3px;
+  /* 배터리 아이콘과 충전 표시 아이콘의 간격 넓히기 위함 */
+}
