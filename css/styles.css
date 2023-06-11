@@ -2,12 +2,21 @@
 /* class는 . + 클래스이름 */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
 @import "reset.css";
-@import "status-bar.css";
+
 /* 원래는 status-bar의 css를 css hack 이용해 아래에 코드 적었지만, 별도로 파일 만들어서 import해줌 */
 /* 코드가 간결해지므로 좋음! 따라서 style.css파일은 css파일들의 집합체로 쓰기! */
+
+/* < Components > - 다른 components 요소들 아래에 추가 (구성요소들, 공통적인 것들 - 상단 상태바, 네비게이션바 등) */
+@import "components/status-bar.css";
+
+/* < Screens > -  다른 Screens 요소들 아래에 추가 (말 그대로 한 화면에 해당 - 로그인 화면, 채팅방 화면 등) */
+@import "screens/login.css";
+
 @import "variables.css";
 /* variable.css에서 적용한 것들을 사용할 떄에는 var(--yellow)로, var 사용! */
-@import "login.css";
+
+/* styles.css파일에는 font-family와 같이 모든 스크린에 적용될 수 있는 스타일을 쓰고
+나머지 구성요소나 화면에 들어갈 특정 스타일은 별도로 해서 연결하는 방식*/
 
 body {
   font-family: "Open Sans", sans-serif;
