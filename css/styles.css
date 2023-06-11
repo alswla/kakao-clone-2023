@@ -1,0 +1,45 @@
+/* 위에부터 css 시작! status-bar css에선 세 개의 div 나란히 하는 것부터 */
+/* class는 . + 클래스이름 */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+@import "reset.css";
+@import "status-bar.css";
+/* 원래는 status-bar의 css를 css hack 이용해 아래에 코드 적었지만, 별도로 파일 만들어서 import해줌 */
+/* 코드가 간결해지므로 좋음! 따라서 style.css파일은 css파일들의 집합체로 쓰기! */
+@import "variables.css";
+/* variable.css에서 적용한 것들을 사용할 떄에는 var(--yellow)로, var 사용! */
+@import "login.css";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
+  /* 
+font-family는 font를 지정해주는데, 원하는 폰트를 세트 혹은 단일로 지정해서 사용해줄 수 있음 
+지금 쓴 (system-ui,)-apple-system들어간 폰트가 apple시스템에 쓰이는 폰트임
+만약 -apple-system폰트에 해당 글씨가 없으면 그 다음 폰트에서 찾는 시스템
+
+꼭 여기있는 폰트만 써야하는건 아니고 내가 원하는 폰트 사용 가능
+구글폰트에서도 찾아서 사용 가능함
+구글폰트에서 마음에 드는 폰트 선택하고 select this style 누르면 좌측 Embed에서 어떻게 사용하는지 확인 가능
+html의 head에서 link써서 추가하는 방법과 css에 추가하는 방법 두개
+그리고 하나의 폰트에도 스타일이 여러개므로 원하는 것 추가하여 사용 가능
+하지만, 하나의 스타일을 선택한 것보다 불러오는데 시간이 오래 걸릴 수 있음 
+따라서 본인이 사용할 폰트 및 스타일을 정확하게 하고 안쓸건 제외하는게 중요!
+
+import사에는 html의 head보다는 css를 사용해서 추가하는걸 추천
+@import에서 <style>칸의 링크 복사해서 css상단에 추가!
+그리고 나서 그 밑의 CSS rules to specify families의 코드를 font-family에 붙여넣기
+*/
+}
+
+/* 그리고 이후 단계로 넘어가기 전에, 우리가 해야할 것이 있음
+바로 body의 margin지우기! 이전에 우리가 원하든 원하지 않든
+브라우저가 알아서 html에 적용시키는 스타일이라고 말한 적 있음
+이러한 기본 설정들을 없애주는 파일이 있는데 이걸 reset css라고함*/
+
+/* 구글에 reset css 치면 나오는 https://meyerweb.com/eric/tools/css/reset/ 사이트에서
+내용 모두 복사하고 css폴더로 가서 reset.css 파일 만들기 
+그 후에 맨 위로 가서 @import "reset.css"넣어서 파일 import해주기 
+그리고 css를 이용해 추가하는게 더 좋은 이유는 html에 link를 여러 줄 만들고 싶지 않기 때문 (안좋은 방법임) */
+
+/* 원래는 먼저 브라우저 스타일을 없애고 우리가 직접 다지안 하는게 더 좋은 방법! */

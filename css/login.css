@@ -1,0 +1,133 @@
+/* 이제 로그인 페이지 css할건데, status-bar는 분리되어 있음! 모든 화면에 상태바가 있기 때문임! */
+.login-header {
+  margin: 90px 0px;
+  /* margin-top: 90px; */
+  /* 밑에 input태그들과의 간격도 있어야 하므로 margin-bottom별도로 쓰지말고 바로
+    margon: 90px 0px로 변경하기 */
+  text-align: center;
+  /* 로그인 헤더 안의 block들이 센터이므로 display:flex쓸 수도 있지만, 
+    h1태그와 p태그 같은 텍스트 다루는 것이기 때문에 text-align: center; 사용가능! 
+    items-align이랑은 다른 태그임!*/
+  display: flex;
+  /* 그냥 flex만 하면 h1태그와 P태그가 나란히 되므로, flex-direction써주기 */
+  flex-direction: column;
+  align-items: center;
+  /* flex-direction이 column이므로 align-item으로 p단을 가운데로 맞추기 */
+}
+.login-header__title {
+  margin-bottom: 20px;
+  /* page ruler 확장프로그램 사용해서 얼마나 떨어져 있는지 측정 가능한데,
+    이미지를 사진 앱으로 여는 것보다 크롬으로 열기하여 측정하는게 정확함.
+    지금은 확장프로그램 ruler redux 없어져서 대체할만한 것 찾아보기 */
+  font-size: 25px;
+  font-weight: 600;
+  /* font-weight는 우리가 가져온 폰트 스타일에 해당하는 weight만 사용 가능하며,
+    500은 제공되지 않아 600으로 설정, 그 외에 가능한 굵기 쓰려면 별도로 가져와야함.
+    하지만 구글에서 제공되는 기본 폰트중에서는 스타일이 많이 없는 경우도 있음 */
+}
+
+.login-header__text {
+  /* 로그인 페이지의 p단은 텍스트의 너비가 제한되어 있음. 따라서 우선 60%로 주기 */
+  /* 하지만, width주면 왼쪽으로 이동함. 이를 가운데로 놔주기 위해서 flex를 사용
+    flex는 부모 요소에 적용하므로 .login-header에 flex쓰기 */
+  width: 60%;
+  opacity: 0.7;
+  /* 아니면 color: grey; */
+}
+
+#login-form {
+  /* 여기서는 id썼으므로 #으로 지정해준 것 */
+  display: flex;
+  flex-direction: column;
+  /* input태그들이 양옆으로 늘어진 것이 아니라 별도로 떨어져 있어야하므로 display줄건데,
+    block으로 주지 말고 (문제가 많으므로) flex로 주고, direction을 column으로 변경해서
+    세로로 늘어지도록 하기! */
+  margin: 0px 30px;
+  /* input 모양 자체가 사진처럼 생긴 것은 아님. input은 block공간처럼 생기고,
+    그 안에서 padding값을 위아래로 가지고 밑에 선을 그은 것 뿐임  */
+}
+#login-form input {
+  /* 자식태그 선택하는 방법으로 써준 이유는, 우리가 input태그에 별도로 class설정하지 않았기 때문임
+      그리고 나중에 다른 input들도 가지게 될 것이기 때문에 */
+  padding: 15px 0px;
+  border: none;
+  font-size: 18px;
+  /* border-bottom: 2px solid rgba(0, 0, 0, 0.2); */
+  /* submit에 적용하고 싶지 않으므로 */
+  margin-bottom: 20px;
+  /* 여기에다가 margin-bottom주면 모든 input에 margin생기므로, 
+    패스워드 부분을 클릭해서 입력가능한 상태가 되면 마진으로 인해서 위에 남는 공간이 보이게 되므로 (클릭하면 둥근모양)
+    따라서 :focus 상태에서 아웃라인 모양이 안보이도록 #login-form input:focus {outline: none;} 주는데,
+    어차피 다른 페이지 css할때도 쓰이므로 reset.css파일 맨 밑에 적어놓기
+  } */
+  /* transition: border-color 0.3s ease-in-out; */
+  /* :focus상태 준 것에 animation주기! 
+    애니메이션 주고 싶은 건, state안준 요소에다가 transition 작성하는 것 잊지 말기! */
+  /* 하지만, submit에 적용하지 않기 위해 여기서 삭제하고 아래에 추가 */
+}
+#login-form input:not([type="submit"]) {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease-in-out;
+  /* input이 submit이 아닌 경우에만, border-bottom을 추가하고, 
+    focus상태가 되면 애니메이션 추가하는 것  */
+}
+#login-form input::placeholder {
+  /* placeholder들을 변경하고 싶기 때문에 ::하고 placeholder지정 */
+  color: rgba(0, 0, 0, 0.4);
+}
+#login-form input:focus {
+  border-color: rgba(0, 0, 0, 0.35);
+  /* input태그에 무언가 입력하고 싶어 클릭하여 활성화 되면 밑줄 색상 변경 */
+}
+/* 이렇게 이메일과 패스워드 부분을 끝냈지만, 계속해서 모든 input에 적용하도록 스타일을 작성했기 때문에,
+  밑의 log in, sign up에도 적용이 되어서 줄이 계속 뜨므로 이걸 변경해야함 
+  이때 우리는 not()을 써볼 것!*/
+
+/* not()이란, 뭐가가 적용되는 걸 원하지 않을 때임!*/
+
+/* 
+  !!중요!! 
+  
+  계속 색상을 하나하나 찾아서 복사 붙여넣기 하기 번거로우므로, 
+  variables.css라는 파일 만들어서 해당 파일에 :root 만들고 (뿌리, 즉 html 전체에 적용되는것)
+  :root {
+      이 안에 색상표 다 넣어버리기
+      --yellow: #fae100; 
+      -> 앞으로 --yellow의 컬러는 #fae00이 될 것임!
+  }
+  단, 이를 사용하기 위해서는 반드시 variables.css파일을 import해줘야함
+  */
+
+/* <로그인 버튼 부분> */
+/* 이 아래부터는 설명 + 내 임의로 해본 것 */
+#login-form input[type="submit"] {
+  /* border: none; -> 위에서 not()으로 설정 별도로 해줬으므로 삭제 */
+  /* cursor: pointer; -> cursor 종류 바꿀 수 있음! not allowed는 클릭 못하게 함 */
+  font-size: 15px;
+  background-color: rgba(0, 0, 0, 0.04);
+  font-weight: 300;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+#login-form input[value="Log in"] {
+  margin-bottom: 10px;
+}
+#login-form input[type="submit"]:focus {
+  background-color: var(--yellow);
+}
+
+/* <아이디찾기 링크 부분> */
+#login-form a {
+  text-align: center;
+  text-decoration: none;
+  /* text-decoration은 밑줄 등 효과! */
+  /* 계속 같은 코드 치는건 좋지 않으므로,
+    color: rgba(0, 0, 0, 0.8); 말고도 효과적으로 쓸 수 있는 색상 사용법은 inherit! */
+  color: inherit;
+  /* 부모의 색상을 물려받는 것으로, default값은 검정임 */
+  font-size: 15px;
+}
+
+/* id사용하는 방법도 보여주기 위해서 id를 넣어서 했지만,
+  class를 넣어줬다면, input([typr=submit])등등 없이 그냥
+  .login-form__input / .login-form__btn / .login-form__a 으로 표시했을 것  */
