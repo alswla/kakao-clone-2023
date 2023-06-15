@@ -20,9 +20,6 @@
          그 다음에 위치를 justyfy-content:flex-end;로 가장 끝으로 보내기
          그렇지만 아이콘들이 살짝 위로 뜨므로 align-items 역시 center 설정
       */
-  position: fixed;
-  width: 100%;
-  /* status-bar고정을 위해 fixed + width값 주기 */
   padding: 5px 3px;
   font-size: 14px;
 }
