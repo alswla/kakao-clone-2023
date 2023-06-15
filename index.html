@@ -13,15 +13,14 @@
     <title>Welcome to Kakao Talk</title>
   </head>
   <body>
-    <div>
-      <div class="status-bar">
-        <!-- 나중에 되면 내가 지정했던 것이 id인지 class인지 헷갈려서 class로 하기로 대부분 통일함 -->
+    <div class="status-bar">
+      <!-- 나중에 되면 내가 지정했던 것이 id인지 class인지 헷갈려서 class로 하기로 대부분 통일함 -->
 
-        <!-- class이름은 겹치면 안되므로 여기서는 길게 지어줄것, __으로 연결되있으므로 1개의 클래스임 -->
-        <!-- 위 이름은 니꼬쌤의 규칙인데, 해당 column이 어디에 있는지 나타내기 쉬움, 상태바인지 대화하면인지! 
+      <!-- class이름은 겹치면 안되므로 여기서는 길게 지어줄것, __으로 연결되있으므로 1개의 클래스임 -->
+      <!-- 위 이름은 니꼬쌤의 규칙인데, 해당 column이 어디에 있는지 나타내기 쉬움, 상태바인지 대화하면인지! 
         많은 곳에 column은 존재할 수 있기 때문에 해당 column의 부모를 앞에 적기 -->
 
-        <!-- 
+      <!-- 
             BEM(Block Element Modifier)규칙 
             : https://getbem.com/introduction/ 
               https://css-tricks.com/bem-101/ (실제 예시)
@@ -31,10 +30,10 @@
             앞으로 BEM방식과 id/class이름 다르게 하는 방식 모두 해볼건데 어떤게 좋은지 판단해보기.
             BEM으로 할지 id+class방식일지 
          -->
-        <div class="status-bar__column">
-          <span>No Service</span>
-          <!-- To do: widi icon (No Service옆에 아이콘 있을 것 -> CSS처리)-->
-          <!-- 
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <!-- To do: wifi icon (No Service옆에 아이콘 있을 것 -> CSS처리)-->
+        <!-- 
             위에서 써준대로 아이콘을 추가해야하는데, 아이콘을 추가하는데에는 2가지 방법이 있음.
             1) 아이콘을 직접 구하는 방법: 직접 만들고 추출하거나 svg파일 이용(svg파일: 픽셀이 없는 이미지 파일형식, 수학으로만 구성)
                 eg) Heroicons 사이트에서 svg로 복사해서 바로 붙여넣기
@@ -44,23 +43,22 @@
                     crossorigin="anonymous"
                 해당 스크립트 설치 후 font awesome가서 아이콘 검색해서 코드 복사 붙여넣기
           -->
-          <i class="fa-solid fa-wifi" style="color: #000000"></i>
-        </div>
+        <i class="fa-solid fa-wifi" style="color: #000000"></i>
+      </div>
 
-        <div class="status-bar__column">
-          <span>18:43</span>
-        </div>
+      <div class="status-bar__column">
+        <span>18:43</span>
+      </div>
 
-        <div class="status-bar__column">
-          <span>11%</span>
-          <!-- Battery icon -->
-          <!-- Lightening icon -->
-          <i class="fa-solid fa-battery-quarter fa-lg"></i>
-          <!-- font awesome에는 아이콘 사이즈 옵션확인 가능
+      <div class="status-bar__column">
+        <span>11%</span>
+        <!-- Battery icon -->
+        <!-- Lightening icon -->
+        <i class="fa-solid fa-battery-quarter fa-lg"></i>
+        <!-- font awesome에는 아이콘 사이즈 옵션확인 가능
           2x사이즈가 있어서 변경 원하면, 해당 아이콘 class에다가 추가로 fa-2x /fa-lg등
           단,해당 아이콘의 옵션에 있는 사이즈만 가능  -->
-          <i class="fa-sharp fa-solid fa-bolt" style="color: #000000"></i>
-        </div>
+        <i class="fa-sharp fa-solid fa-bolt" style="color: #000000"></i>
       </div>
     </div>
     <!-- Status-bar html 끝 -->
@@ -72,7 +70,7 @@
       <!-- alt키 누르고 클릭하면 코드 동시에 작성 가능 -->
       <p class="login-header__text">
         If you have a Kakao Account, <br />log in with your email or phone
-        number.<br />
+        number.
       </p>
     </header>
 
@@ -119,6 +117,7 @@
       src="https://kit.fontawesome.com/3094465d0e.js"
       crossorigin="anonymous"
     ></script>
-    <!-- sscript는 항상 마지막에 있어야함! body태그를 닫기 직전에. 하지만 업데이트하면서 head태그 닫기 직전에도 가능 -->
+    <!-- sscript는 항상 마지막에 있어야함! body태그를 닫기 직전에. 
+      하지만 업데이트하면서 head태그 닫기 직전에도 가능 -->
   </body>
 </html>

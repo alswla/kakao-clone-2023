@@ -98,6 +98,8 @@
   단, 이를 사용하기 위해서는 반드시 variables.css파일을 import해줘야함
   */
 
+/* 추가로, login 클릭시 아웃라인 선 없어지는 건 공통이므로 reset.css 파일에 적음 */
+
 /* <로그인 버튼 부분> */
 /* 이 아래부터는 설명 + 내 임의로 해본 것 */
 #login-form input[type="submit"] {

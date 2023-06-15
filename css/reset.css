@@ -131,3 +131,12 @@ table {
 #login-form input:focus {
   outline: none;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  /* inherit ->부모의 색상 따라가며, 
+  text-decoration은 링크 밑의 선인데 이건 공통적으로 없어도 되므로 */
+  /* 하지만 사진의 아이콘 색상이 blaock이 아니기 때문에, nav-bar.css에서 별도로
+  색상을 다시 줄 것 */
+}
