@@ -58,9 +58,46 @@
 } */
 .nav__link {
   color: #2f363e;
+  position: relative;
+  /* 메세지박스 위의 숫자 아이콘 위해 추가! */
 }
 /* 그럼 이제 navigation bar를 아래로 옮겨보자! */
 /* 
 이거에 대해 강의를 했었는데, 내가 원하는 곳에 무언가가 계속 있기를 바란다면 뭘 썼었는지?
 -> 바로 position:fixed! 이제 위에다가 코드 써보기!
 */
+
+.nav__notification {
+  background-color: tomato;
+  /* text-decoration: none; => reset에 설정 */
+  width: 20px;
+  height: 20px;
+  /* width와 height를 사용하면 적용되지 않을 것인데, 그 이유는 span은 inline이기 때문!
+  ==> 따라서 block해줘야함 
+  ==> 하지만, 1을 원 가운데에 오게하기 위해서는 flex를 해줘야하므로 block말고 flex로!*/
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  /* 이제 메세지 아이콘의 오른쪽 위에 위치해야하므로 position: absolute! 
+  하지만 이 상태에서 그냥 right: 5px 하면 body기준으로 가버림! 
+  ==> 부모 요소에 relative 없기 때문 */
+  position: absolute;
+  left: 20px;
+  /* top: -15px; 혹은 bottom:15px */
+  bottom: 15px;
+}
+
+.nav__redellipsis {
+  background-color: tomato;
+  width: 5px;
+  height: 5px;
+  border-radius: 15px;
+  display: flex;
+  position: absolute;
+  left: 25px;
+}
+
+/* 이렇게 navigation부분은 끝! 지금 만든 이 navigation은 다른 곳에도 동일하게 사용가능! */
