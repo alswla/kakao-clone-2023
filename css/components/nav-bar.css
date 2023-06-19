@@ -58,14 +58,18 @@
 } */
 .nav__link {
   color: #2f363e;
+<<<<<<< HEAD
   position: relative;
   /* 메세지박스 위의 숫자 아이콘 위해 추가! */
+=======
+>>>>>>> a026ea5fbcee13c81adcba4b871972fdde947ec8
 }
 /* 그럼 이제 navigation bar를 아래로 옮겨보자! */
 /* 
 이거에 대해 강의를 했었는데, 내가 원하는 곳에 무언가가 계속 있기를 바란다면 뭘 썼었는지?
 -> 바로 position:fixed! 이제 위에다가 코드 써보기!
 */
+<<<<<<< HEAD
 
 .nav__notification {
   background-color: tomato;
@@ -101,3 +105,5 @@
 }
 
 /* 이렇게 navigation부분은 끝! 지금 만든 이 navigation은 다른 곳에도 동일하게 사용가능! */
+=======
+>>>>>>> a026ea5fbcee13c81adcba4b871972fdde947ec8
