@@ -1,0 +1,25 @@
+/* 
+header는 다른 페이지의 header들과 style이 동일하므로 또 사용 가능! (아이콘만 다름)
+==> component에 파일 생성!
+*/
+
+.screen-header {
+  display: flex;
+  /* 아이콘과 글을 한 줄에 놓고 싶으므로! */
+  justify-content: space-between;
+  /* h1과 div에만 적용되므로 아이콘과 글이 양쪽으로 벌어짐 */
+  align-items: center;
+  /* 중앙정렬! */
+  /* padding: 20px; */
+  /* 이 padding이 다른 곳도 똑같이 쓰이므로 (프로필사진 여백) variable에 저장! */
+  padding: var(--horizontal-space);
+}
+
+.screen-header__title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.screen-header__icons span {
+  margin-left: 22px;
+}

@@ -1,0 +1,18 @@
+.user-component {
+  margin-bottom: 25px;
+}
+.friends-screen__channel-header {
+  display: flex;
+  position: relative;
+}
+
+.user-component__dropcontent {
+  display: none;
+  position: absolute;
+}
+.user-component__columnlist {
+  display: flex;
+}
+.friends-screen_dropbtn:active .user-component__columnlist {
+  display: flex;
+}

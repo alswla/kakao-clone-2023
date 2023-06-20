@@ -1,0 +1,40 @@
+#friends-display-link {
+  display: block;
+  text-align: center;
+  /* 아이콘과 콘텐츠를 가운데로 오게하기 위함 */
+  /* color:#2f363e;
+  color는 거의 다 검정이 아닌 검정에 가까운 회색이므로 일괄로 입력되도록 style.css의 body에 입력 */
+  background-color: #fafafa;
+  /* 아이콘과 콘텐츠를 감싸는 a링크는 block으로 되었고, 
+  해당 block의 색상 및 글자 컬러 변경 */
+  padding: 15px 0px;
+  /* 박스와 아이콘&텍스트 간의 간격 */
+  font-size: 16px;
+  margin-bottom: 20px;
+  /* 밑의 main박스와의 간격! */
+}
+
+#friends-display-link i {
+  color: rgba(0, 0, 0, 0.3);
+  padding: 0px 5px 0px 10px;
+}
+
+.friends-screen {
+  padding: 0px var(--horizontal-space);
+  /* 20px로 padding값이 동일하므로 해당 값을 variable값으로 넣고 variable을 가져옴 */
+}
+
+.friends-screen__channel {
+  margin-top: 25px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  /* border는 margin을 포함하지 않기 때문에 padding으로 거리 벌려줘야함! */
+  padding-top: 15px;
+}
+.frinds-screen__channel-header {
+  margin-bottom: 25px;
+  /* 밑의 채널 아이콘과 떨어져있으므로 margin-bottom */
+  /* 그리고 channel header 텍스트와 옆의 화살표도 떨어져있으므로 이건 flex라는 것 */
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.5);
+}

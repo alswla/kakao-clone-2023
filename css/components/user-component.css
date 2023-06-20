@@ -1,0 +1,65 @@
+/* 지금 user-component는 2개임. 1개는 카카오아이콘과 channel명,
+ 그리고 하나는 숫자2와 화살표모양 아이콘. 
+ 지금은 두개 다 display: flex에 align-items로 정렬되어있지만 분리 필요!
+ */
+.user-component {
+  justify-content: space-between;
+}
+.user-component,
+.user-component__column:first-child {
+  /* first-child는 내 프로필 사진의 column */
+  display: flex;
+  align-items: center;
+  /* 이건 첫번째 user-component__column의 elements들이 flex가 된 것 */
+}
+/* 그리고 우리는 프로필 사진을 줄여야하는데, 
+여기서 사용되는 프로필사진의 크기는 큰 사이즈이고 그 밑의 user목록은 작은 사진 
+그리고 채팅방화면과 설정화면의 사진의 크기는 보통크기임!
+
+따라서 다른 곳에서도 사용할 수 있도록 우선 보통사진 크기로 먼저 만들고 나서
+사이즈를 변경하는 방법을 배워볼 것! */
+
+.user-component__avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 25px;
+  margin-right: 27px;
+  /* 지금 보면 screen-header의 Friends와 밑의 사진들의 간격이 동일한 것을 알 수 있음.
+  따라서 이를 variable.css에 적어놓고 공통적으로 쓸 수 있게 해줄 것! 
+  그리고 padding을 공통적으로 적용하기 위해 하나의 box로 묶어줄 것! 
+  ===> 가장 좋은 건 main태그로! */
+}
+
+.user-component__avatar--xl {
+  width: 80px;
+  height: 80px;
+  border-radius: 25px;
+  margin-right: 27px;
+}
+.user-component__avatar--sm {
+  width: 60px;
+  height: 60px;
+  border-radius: 25px;
+  margin-right: 27px;
+}
+.user-component__title {
+  font-weight: 600px;
+  font-size: 20px;
+}
+
+.user-component__title--not-bold {
+  font-weight: 400px;
+}
+
+.user-component__column:last-child {
+  color: rgba(0, 0, 0, 0.5);
+  /* user-component의 숫자2와 화살표 색상 */
+}
+
+/* 그리고 프로필사진 밑에 들어갈 subtitle(대화내용 미리보기)를 만들어줄건데,
+지금 화면에서 필요한건 아니지만 다른 화면에서 써야하니 미리 만들어두기! */
+.user-component__subtitle {
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 15px;
+}
